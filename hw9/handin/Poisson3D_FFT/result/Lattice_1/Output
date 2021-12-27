@@ -1,0 +1,4 @@
+Enter the GPU ID (0/1): 0
+Enter the lattice size: 1
+Would you want to print result? (0/1):(0, 0, 0) -1.000000 +0.000000
+GPU time: 93.893852 (ms)

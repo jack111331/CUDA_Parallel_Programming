@@ -1,0 +1,12 @@
+Enter the matrix size: 6
+Print out eigenvectors (1/0) ? 1
+zheevd gpu time : 0.00166 sec.
+zheevd cpu time : 0.00003 sec.
+difference in eigenvalues : 0.000000e+00
+Enter the matrix size: 10240
+Print out eigenvectors (1/0) ? 1
+Enter the matrix size: 10240
+Print out eigenvectors (1/0) ? 0
+zheevd gpu time : 176.18088 sec.
+zheevd cpu time : 975.19714 sec.
+difference in eigenvalues : 9.992007e-16

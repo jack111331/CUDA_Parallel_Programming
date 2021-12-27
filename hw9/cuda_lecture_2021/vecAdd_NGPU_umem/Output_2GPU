@@ -1,0 +1,16 @@
+
+Vector Addition with multiple GPUs 
+using unified memory 
+
+Enter the number of GPUs: 2
+GPU device number: 0 1 
+Enter the size of the vectors: 81920000
+Enter the number of threads per block: 32
+The number of blocks is 1280000
+Processing time for GPU: 97.795105 (ms) 
+GPU Gflops: 2.513009
+Processing time for CPU: 445.868469 (ms) 
+CPU Gflops: 0.551194
+Speed up of GPU = 4.559210
+Check result:
+norm(h_C - h_D)=0.000000000000000e+00

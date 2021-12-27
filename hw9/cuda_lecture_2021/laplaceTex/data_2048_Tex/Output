@@ -1,0 +1,14 @@
+Enter the GPU ID (0/1): 0
+Select GPU with device ID = 0
+Solve Laplace equation on a 2D lattice with boundary conditions (using texture)
+Enter the size (Nx, Ny) of the 2D lattice: 2048 2048
+Enter the number of threads (tx,ty) per block: 16 16
+The dimension of the grid is (128, 128)
+To compute the solution vector with CPU (1/0) ?0
+Input time for GPU: 5.706784 (ms) 
+error (GPU) = 0.000000000000000e+00
+total iterations (GPU) = 4248255
+Processing time for GPU: 1969046.625000 (ms) 
+GPU Gflops: 63.221366
+Output time for GPU: 4.878240 (ms) 
+Total time for GPU: 1969057.250000 (ms) 

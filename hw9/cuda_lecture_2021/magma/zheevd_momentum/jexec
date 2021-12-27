@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export LD_PRELOAD=/opt/gcc-4.9/lib/libgomp.so
+export OMP_NUM_THREADS=4
+
+./magma_zheevd_momentum

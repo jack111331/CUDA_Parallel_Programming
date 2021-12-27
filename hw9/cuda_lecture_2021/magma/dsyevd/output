@@ -1,0 +1,5 @@
+Enter the matrix size: 8192
+Print out eigenvectors (1/0) ? 0
+dsyevd gpu time : 24.95390 sec.
+dsyevd cpu time : 62.43451 sec.
+difference in eigenvalues : 8.185452e-12

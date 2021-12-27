@@ -1,0 +1,99 @@
+\documentclass{article}
+\title{CUDA Parallel Programming\\Homework 9}
+\usepackage{graphicx}
+\usepackage[UTF8]{ctex}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{csvsimple}
+\CTEXoptions[today=old]
+\author{40647007S 朱健愷}
+
+\begin{document}
+	\maketitle
+	\section{Source codes}
+	\subsection{File Layout}
+	\begin{itemize}
+		\item Poisson3D\textunderscore{FFT}/poisson3d\textunderscore{fft}.cu - Main code computes the potential of Poisson equation with point charge at origin in periodic boundary using cuFFT.
+		\item Poisson3D\textunderscore{FFT}/Makefile - Script to auto generate executable from code.
+		\item Poisson3D\textunderscore{FFT}/result/Lattice\textunderscore */Output - Output result using different lattice size.
+		\item Poisson3D\textunderscore{FFT}/result/Lattice\textunderscore */poissonSystem.dat - Output solved potential field result using different lattice size.
+		\item Poisson3D\textunderscore{FFT}/result/Lattice\textunderscore */poissonSystemDiagonal.dat - Output the solved potential field along diagonal result using different lattice size.
+		\item Poisson3D\textunderscore{FFT}/result/Lattice\textunderscore */poissonSystemXAxis.dat - Output the solved potential field along X-axis result using different lattice size.
+		
+		\item Poisson3D\textunderscore{FFT}/experiment.sh - Script to auto generate results of the potential of Poisson equation with point charge at origin in periodic boundary using cuFFT.
+
+		\item notebook/*.png - Plots concluding output result
+	\end{itemize}
+	
+	
+	\subsection{Usage}
+	Make code in both Poisson3D\textunderscore{FFT}/ directory
+	Run the experiment.sh script in Poisson3D\textunderscore{FFT}/ directory
+	
+	\begin{verbatim}
+	cd Poisson3D_FFT
+	make
+	sh experiment.sh
+	\end{verbatim}
+	
+	And it will produce the computation result using different lattice size.
+	
+	\section{Code design}
+	In this assignment, we should first obtain the fourier transform of point charge at origin, this can be done using following equation.
+	
+	\begin{equation}
+		\rho(\overrightarrow{k})=\sum_{\overrightarrow{r}}e^{-\frac{2\pi \overrightarrow{r} \cdot \overrightarrow{k}}{N}} \delta({\overrightarrow{r}})
+	\end{equation}
+
+	Because the point charge is at origin, so
+	
+	\begin{equation}
+		\rho(\overrightarrow{k})=1
+	\end{equation}
+	
+	Let's look at the Poisson equation we want to solve, because the point charge is defined at the origin, so we can obtain the following Poisson equation
+	
+	\begin{equation}
+		\nabla^2\phi(\overrightarrow{r})=\rho(\overrightarrow{r})
+	\end{equation}
+	
+	Because in the momentum space, the laplace operator applied on $\phi(\overrightarrow{r})$ in the position space can be rewriten as $-k^2\phi(\overrightarrow{k})$ in the momentum space, substitude it into the equation and rearranging it gives
+
+	\begin{equation}
+	\phi(\overrightarrow{k})=\frac{-1}{k^2}\rho(\overrightarrow{k})
+	\end{equation}
+	
+	Applying inverse fourier transform on $\phi(\overrightarrow{k})$ and normalize it by multiplying $\frac{1}{N^3}$ gives us the potential $\phi(\overrightarrow{r})$ in the position space. 
+
+	\section{Result}
+	\subsection{Experiment environment}
+	I ran my code on workstation provided in course, below is the Setup of workstation
+	\begin{itemize}
+		\item Operating system: Linux version 4.19.172 (root@twcp1)\\(gcc version 6.3.0 20170516 (Debian 6.3.0-18+deb9u1))
+		\item CPU: Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz
+		\item GPU: Nvidia GTX 1060 6GB
+		\item Memory: 32GB 
+	\end{itemize}	
+	
+	
+	\subsection{Observation}
+	We can examine the solving poisson equation result by using following equation. We calculate it at regions not in origin and see if it approaches zero
+	
+	\begin{equation}
+		\begin{aligned}
+		\nabla^2\phi(x, y, z)=\frac{\phi(x+a, y, z)+\phi(x-a, y, z)-2\phi(x, y, z)}{a^2}+\\\frac{\phi(x, y+a, z)+\phi(x, y-a, z)-2\phi(x, y, z)}{a^2}+\frac{\phi(x, y, z+a)+\phi(x, y, z-a)-2\phi(x, y, z)}{a^2}
+		\end{aligned}
+	\end{equation}
+	
+	As the lattice size getting bigger, we can observe that the grid result obtained from above equation indeed approaches zero. And we can see that because it use the periodic boundary condition, we can found that the above equation also established even cross the boundary in all direction.
+	
+	
+	After experimenting the program, the maximum lattice I can solve the Poisson equation is $512\times 512\times 512$.
+	
+	\section{Reference}
+\href{https://math.stackexchange.com/questions/1809871/solve-poisson-equation-using-fft}{Solve Poisson Equation using FFT}
+\href{https://math.stackexchange.com/questions/877966/fourier-transform-of-poisson-equation/877967}{Fourier Transform of Poisson Equation}
+\href{https://github.com/phrb/intro-cuda/blob/master/src/cuda-samples/7_CUDALibraries/simpleCUFFT_2d_MGPU/simpleCUFFT_2d_MGPU.cu}{Code for solving 2D Poisson equation}
+\href{http://links.uwaterloo.ca/amath353docs/set11.pdf}{Fourier transforms and the Dirac delta function}
+	
+\end{document}
