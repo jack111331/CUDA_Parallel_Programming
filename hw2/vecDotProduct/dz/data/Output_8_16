@@ -1,0 +1,18 @@
+Enter the GPU ID: 0
+Set GPU with device ID = 0
+Minimum of array of A
+Enter the size of the vectors: 81920007
+Enter the number (2^m) of threads per block: 8
+Enter the number of blocks per grid: 16
+Input time for GPU: 52.083809 (ms) 
+Processing time for GPU: 176.724899 (ms) 
+GPU Gflops: 0.463545
+Output time for GPU: 3.545472 (ms) 
+Total time for GPU: 232.354187 (ms) 
+Processing time for CPU: 68.169853 (ms) 
+CPU Gflops: 1.201704
+Speed up of GPU = 0.293388
+Check result:
+|(h_G - h_D)/h_D|=0.000000000000000e+00
+h_G =-9.999999403953552e-01
+h_D =-9.999999403953552e-01
