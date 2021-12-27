@@ -1,0 +1,5 @@
+Current block size is 2, the input is:
+0
+512 512
+2 2
+2

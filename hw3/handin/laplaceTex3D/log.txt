@@ -1,0 +1,25 @@
+Current block size is 2, the input is:
+0
+4 4 4
+2 2 2
+2
+Current L is 8, block size is 4, the input is:
+0
+8 8 8
+4 4 4
+2
+Current L is 16, block size is 4, the input is:
+0
+16 16 16
+4 4 4
+2
+Current L is 32, block size is 4, the input is:
+0
+32 32 32
+4 4 4
+2
+Current L is 64, block size is 4, the input is:
+0
+64 64 64
+4 4 4
+2
