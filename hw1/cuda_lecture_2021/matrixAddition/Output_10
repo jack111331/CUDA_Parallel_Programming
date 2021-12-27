@@ -1,0 +1,17 @@
+Enter the GPU ID: 0
+Set GPU with device ID = 0
+Matrix Multiplication: C = A * B
+Enter the size of the matrix: 6400
+Enter the number of threads per block: Threads per block: (10, 10)
+The number of blocks is (640, 640)
+Input time for GPU: 52.190689 (ms) 
+Processing time for GPU: 13.430272 (ms) 
+GPU Gflops: 0.000477
+Output time for GPU: 44.988415 (ms) 
+Total time for GPU: 110.609375 (ms) 
+Processing time for CPU: 32.275040 (ms) 
+CPU Gflops: 0.000198
+Speed up of GPU = 0.291793
+Check result:
+norm(h_C - h_D)=0.000000000000000e+00
+

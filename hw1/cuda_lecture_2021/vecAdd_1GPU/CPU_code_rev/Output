@@ -1,0 +1,15 @@
+Vector Addition: C = 1/A + 1/B
+To enter the seed for the initialization of RNG ? (1/0) 1
+Enter the seed: 12345
+To test rand / rand_16870 ? (1/0) 1
+Testing rand ...
+RAND_MAX = 2147483647
+x = 383100999
+y = 858300821
+To check whether the algorithm of rand() is x(i+1) = 16807*x(i) mod (2^31 -1)
+z = 622516487, z != y, the algorithm of rand is different from above !
+y = 383100999
+The period of rand() is 123349810.000000
+Enter the size of the vectors: 81920000
+Processing time for CPU: 304.251000 (ms) 
+CPU Gflops: 0.807754

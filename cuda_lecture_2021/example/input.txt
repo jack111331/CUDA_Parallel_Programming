@@ -1,0 +1,2 @@
+0		# GPU device ID.
+4096000		# The number of vector elements
