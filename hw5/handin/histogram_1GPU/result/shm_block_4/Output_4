@@ -1,0 +1,19 @@
+Enter the GPU ID: Set GPU with device ID = 0
+To find the histogram of a data set (with real numbers): 
+Enter the size of the data vector: 81920000
+Enter the data range [Rmin, Rmax] for the histogram: 0.000000 4.000000
+Enter the number of bins of the histogram: 4
+Enter the number of threads per block: 4
+Enter the number of blocks per grid: 32
+The number of blocks is 32
+To compute the histogram with CPU (1/0) ? 0
+Input time for GPU: 51.862911 (ms) 
+Processing time for GPU: 242.306656 (ms) 
+GPU Gflops: 0.676168
+Output time for GPU: 3.531168 (ms) 
+Total time for GPU: 297.700714 (ms) 
+Histogram (GPU):
+0.500000 51781403 
+1.500000 19051914 
+2.500000 7009657 
+3.500000 4077026 

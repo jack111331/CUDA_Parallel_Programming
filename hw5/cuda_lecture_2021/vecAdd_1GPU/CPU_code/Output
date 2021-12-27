@@ -1,0 +1,4 @@
+Vector Addition: C = 1/A + 1/B
+Enter the size of the vectors: 81920000
+Processing time for CPU: 304.254000 (ms) 
+CPU Gflops: 0.807746

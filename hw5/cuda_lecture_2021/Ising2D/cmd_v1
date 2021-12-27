@@ -1,0 +1,90 @@
+#--------------------------------------------------------------------------
+#	Please fix the following settings (DO NOT CHANGE THEM).
+#
+#	- Universe:      The running environment of Condor.
+#	- Executable:    This job start up script.
+#	- Machine_count: This cluster only provide environment for jobs
+#                        running in a single node. So please set it to 1.
+#
+Universe      = vanilla
+Executable    = /opt/bin/runjob
+Machine_count = 1
+
+#--------------------------------------------------------------------------
+#	The output files:
+#
+#	- Output: The STDOUT of this job.
+#	- Error:  The STDERR of this job.
+#	- Log:    The log message from Condor.
+#
+Output        = condor.out
+Error         = condor.err
+Log           = condor.log
+
+#--------------------------------------------------------------------------
+#	The Queue.
+#
+#
+#Requirements  = (MTYPE == "TEST")
+Requirements  = (MTYPE == "sm61_60G")
+
+#--------------------------------------------------------------------------
+#	The number of GPUs required. Since each computing node has 2 GPUs,
+#	one should set it to either 1 or 2.
+#
+Request_cpus  = 1
+
+#--------------------------------------------------------------------------
+#       Change this parameter to the full path of your working directory
+#
+Initialdir    = /work/cuda_lecture/Ising2D
+
+#--------------------------------------------------------------------------
+#	Please modify the following line according to your code. The
+#	syntax is:
+#
+#	Arguments = <executable_name> [<input_file>] [<output_file>]
+#
+#	where [<input_file>] and [<output_file>] are optional. You can
+#	choose either one of the three settings.
+#
+#	(Suppose that the code or script to run the computation is named
+#	 "jexec". ./jexec means that the code is located in your working
+#	 directory. If it is located elsewhere, please provide its full path)
+#
+#	Arguments = ./jexec
+#	    (running your code "jexec" directly without any arguments)
+#
+#	Arguments = ./jexec inp.txt
+#	    (this is equivalent to "./jexec < inp.txt")
+#
+#	Arguments = ./jexec inp.txt out.txt
+#	    (this is equivalent to "./jexec < inp.txt >> out.txt")
+#
+#
+#	The GPU ID can be queried by either of the following ways.
+#
+#	- From the environment variable $GPU_ID.
+#
+#	- From the file "GID" created in the working directory.
+#
+#	- If the <input_file> is provided, the place to fill in the GPU ID
+#	  in the <input_file> should be the keyword "GPU_ID".
+#
+Arguments = ./ising2d_1gpu_gmem_v1 input_1gpu output_1gpu_v1
+#Arguments = ./deviceQuery 
+#Arguments = ./deviceQuery /dev/null deviceQuery.out 
+#Arguments = ./p2pBandwidthLatencyTest /dev/null p2pBandwidthTest.out 
+
+#--------------------------------------------------------------------------
+#	If you want to receive a notification when your job starts or
+#	is completed, please provide your Email address here. Otherwise
+#	please set it to "never".
+#
+Notification = never
+
+#--------------------------------------------------------------------------
+#	End of the settings. Please do not edit the followings.
+#
+Queue                         
+
