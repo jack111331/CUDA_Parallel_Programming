@@ -1,0 +1,17 @@
+
+Monte Carlo integration with multiple GPUs 
+Enter the number of sampling(2^N): Enter the number of GPUs: 2
+GPU device number: 0 1 
+Enter the number of threads per block: 128
+The number of blocks is 128
+Data input time for GPU: 6.034336 (ms) 
+Processing time for GPU: 0.044288 (ms) 
+GPU Gflops: 10.358382
+Data output time for GPU: 0.544064 (ms) 
+GPU Simple sampling using N=32768, integration result= 0.242658 +- 0.000321
+Total time for GPU: 6.622688 (ms) 
+Processing time for CPU: 0.208064 (ms) 
+CPU Gflops: 2.204860
+Speed up of GPU = 0.031417
+CPU Simple sampling using N=32768, integration result= 0.242658 +- 0.000321
+norm(cpuIntegration - gpuIntegration)=1.903646648315771e-06

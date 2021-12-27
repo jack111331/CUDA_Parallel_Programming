@@ -1,0 +1,11 @@
+
+Monte Carlo integration with multiple GPUs 
+Enter the number of sampling(2^N): Enter the number of GPUs: 1
+GPU device number: 0 
+Enter the number of threads per block: 32
+The number of blocks is 2048
+Processing time for CPU: 27.227200 (ms) 
+CPU Gflops: 0.033698
+CPU Important sampling using metropolis algorithm.
+N=65536, integration result=0.242866 +- 0.000227
+norm(cpuIntegration - gpuIntegration)=2.927270543295890e-04
