@@ -1,0 +1,13 @@
+Enter the number of measurements: 100
+100
+Enter t_max for computing integ. autocorrel. time: 99
+99
+t = 8, tau_int = 1.812600e+000, sqrt(2*tau_int) = 1.903996e+000
+<E> = -1.203588e+000 +- 2.851766e-004
+
+Enter the number of measurements: 100
+100
+Enter t_max for computing integ. autocorrel. time: 99
+99
+t = 11, tau_int = 4.531559e+000, sqrt(2*tau_int) = 3.010501e+000
+<M> = -1.539886e-002 +- 3.005923e-003

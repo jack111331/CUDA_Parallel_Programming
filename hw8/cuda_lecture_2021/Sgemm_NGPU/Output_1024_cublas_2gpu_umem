@@ -1,0 +1,36 @@
+Sgemm: C <- alpha*A*B + beta*C 
+Enter the value of alpha: 3.141600
+Enter the value of beta: 0.712300
+Enter the dimension of the matrix: 1024
+Enter the number of GPUs: 2
+GPU device numbers: 0 1 
+Enter the number of threads per block: 128
+The number of blocks is 4
+Enter the option for the unified memory (0/1): 1
+Calling cublasXTSgemm with 2-GPU
+Time for 2-GPU: 20.041759 (ms) 
+2-GPU Gflops: 160.725682
+Computing with CPU
+Time for CPU: 8263.464844 (ms) 
+CPU Gflops: 0.389815
+Speed up of 2-GPU: 412.312347 
+normalized error_norm = 4.30609e-07
+
+Sgemm: C <- alpha*A*B + beta*C 
+Enter the value of alpha: 3.141600
+Enter the value of beta: 0.712300
+Enter the dimension of the matrix: 1024
+Enter the number of GPUs: 2
+GPU device numbers: 0 1 
+Enter the number of threads per block: 128
+The number of blocks is 4
+Enter the option for the unified memory (0/1): 1
+Calling cublasXTSgemm with 2-GPU
+Time for 2-GPU: 23.202496 (ms) 
+2-GPU Gflops: 138.830992
+Computing with CPU
+Time for CPU: 8292.020508 (ms) 
+CPU Gflops: 0.388473
+Speed up of 2-GPU: 357.376221 
+normalized error_norm = 4.30609e-07
+

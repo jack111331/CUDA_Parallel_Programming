@@ -1,0 +1,18 @@
+Sgemm: C <- alpha*A*B + beta*C 
+Enter the value of alpha: 3.141600
+Enter the value of beta: 0.712300
+Enter the dimension of the matrix: 1024
+Enter the number of GPUs: 1
+GPU device numbers: 0 
+Enter the number of threads per block: 128
+The number of blocks is 8
+Enter the option for the unified memory (0/1): 1
+Calling cublasXTSgemm with 1-GPU
+Time for 1-GPU: 13.801536 (ms) 
+1-GPU Gflops: 233.396164
+Computing with CPU
+Time for CPU: 4012.266846 (ms) 
+CPU Gflops: 0.802844
+Speed up of 1-GPU: 290.711639 
+normalized error_norm = 4.30609e-07
+

@@ -1,0 +1,25 @@
+12345
+20
+1000
+1000
+10
+100
+10
+2.5
+0.0
+1
+
+
+
+
+12345   // seed for RNG
+20      // the number of sites in each dimension
+1000    // the # of sweeps for thermalization
+1000    // the # of measurements
+10      // the interval between successive measurements
+100     // the display interval
+10      // the interval for saving the spin configuration
+1.0     // the temperature in units of J/k
+0.0     // the external magnetization
+1       // Initialize spins configurations (0/1: cold/hot start) 
+

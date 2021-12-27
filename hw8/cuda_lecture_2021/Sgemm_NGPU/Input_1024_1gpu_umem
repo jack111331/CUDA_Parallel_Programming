@@ -1,0 +1,18 @@
+3.141600
+0.712300
+1024
+1
+0
+128
+1
+
+
+Enter the value of alpha: 3.141600
+Enter the value of beta: 0.712300
+Enter the dimension of the matrix: 1024
+Enter the number of GPUs: 1
+GPU device numbers: 0
+Enter the number of threads per block: 128
+Enter the option for the unified memory (0/1): 1
+
+
