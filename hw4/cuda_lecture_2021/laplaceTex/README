@@ -1,0 +1,60 @@
+There are 3 exceution files:
+
+  laplace_cpu: CPU only, which can be run on the console.
+  laplace: GPU without using texture, with optional CPU solution.
+  laplaceTex: GPU using texure, with optional CPU solution.
+
+Some data of test runs:
+
+/data_64       (64 x 64) 
+/data_64_Tex   (64 x 64, GPU using texture)
+
+/data_128      (128 x 128) 
+/data_128_Tex  (128 x 128, GPU using texture)
+
+/data_256      (256 x 256) 
+/data_256_Tex  (256 x 256, GPU using texture)
+
+/data_512      (512 x 512) 
+/data_512_Tex  (512 x 512, GPU using texture)
+
+/data_1024      (1024 x 1024) 
+/data_1024_Tex  (1024 x 1024, GPU using texture)
+
+When the lattice size reaches 128 x 128
+the advantage of using GPU becomes obvious. 
+
+When the lattice size is very large,say 2048 x 2048  
+the advantage of using texture becomes obvious. 
+
+In doing test runs, you should only compute the CPU solution
+once for each lattice size, since it takes a very long time
+for CPU to compute for a large lattice, say, 512 x 512 and beyond.
+To turn off the CPU solution, the last line of the input file 
+should be entered as the following example.
+
+For laplace.cu, the input file looks like
+
+GPU_ID
+512 512
+16 16 
+1
+
+where the last line only selects the GPU solution.
+
+
+For laplaceTex.cu (using texture), the input file looks like
+
+GPU_ID
+512 512
+16 16
+0
+
+where the last line only selects the GPU solution.
+
+
+
+
+
+
+  

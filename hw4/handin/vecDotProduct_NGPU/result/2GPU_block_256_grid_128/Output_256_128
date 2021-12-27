@@ -1,0 +1,19 @@
+
+Vector dot product with multiple GPUs 
+Enter the number of GPUs: 2
+GPU device number: 0 1 
+Enter the size of the vectors: 40960000
+Enter the number of threads per block: 256
+The number of blocks is 128
+Data input time for GPU: 55.039776 (ms) 
+Processing time for GPU: 1.416544 (ms) 
+GPU Gflops: 86.746337
+Data output time for GPU: 8.118432 (ms) 
+Total time for GPU: 64.574753 (ms) 
+Processing time for CPU: 38.964066 (ms) 
+CPU Gflops: 2.102450
+Speed up of GPU = 0.603395
+Check result:
+|(h_G - h_D)/h_D|=7.633283991037447e-07
+h_G =1.281237285614014e+03
+h_D =1.281236307609954e+03

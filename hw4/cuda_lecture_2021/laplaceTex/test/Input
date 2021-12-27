@@ -1,0 +1,11 @@
+1
+256 256
+32 32
+2
+
+
+Enter the GPU ID (0/1): 0
+Enter the size (Nx, Ny) of the 2D lattice: 8 8
+Enter the number of threads (tx,ty) per block: 4 4
+To compute the solution vector with CPU/GPU/both (0/1/2) ? 2
+
